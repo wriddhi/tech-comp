@@ -4,7 +4,7 @@ export default function About() {
       title: "Coding Competition",
       description: (
         <>
-          This event tests the participants' coding skills and problem-solving
+          This event tests the participants&apos; coding skills and problem-solving
           abilities. It provides an excellent opportunity for students to
           showcase their technical expertise and demonstrate their programming
           prowess. The coding competition will be organised on{" "}
