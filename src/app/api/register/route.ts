@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ message: "There was some unknown error" });
+  return NextResponse.json({ message: "Registration Successful" });
 }
 
 export async function GET(req: NextRequest) {

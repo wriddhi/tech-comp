@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 
 type Event = {
@@ -13,7 +15,7 @@ const EventCard: React.FC<Event> = ({ category, description, href }) => {
         {category}
       </h3>
       <p className="text-lg">{description}</p>
-      <Link className="bg-white text-black font-bold p-2 rounded-lg" href={href}>Register Now &gt;</Link>
+      <a className="bg-white text-black font-bold p-2 rounded-lg" href={href}>Register Now &gt;</a>
     </div>
   );
 }

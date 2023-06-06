@@ -1,11 +1,13 @@
+"use client"
+
 import './globals.css'
 import { Inter, Jost, Chivo_Mono, Bruno_Ace_SC } from 'next/font/google'
 import Header from '@/components/Header'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const jost = Jost({ subsets: ['latin'], variable: '--font-jost' })
-const chivo_mono = Chivo_Mono({ subsets: ['latin'], variable: '--font-chivo-mono' })
-const bruno_ace_sc = Bruno_Ace_SC({ weight: "400", subsets: ['latin'], variable: '--font-bruno-ace-sc' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', preload: true })
+const jost = Jost({ subsets: ['latin'], variable: '--font-jost', display: 'swap', preload: true })
+const chivo_mono = Chivo_Mono({ subsets: ['latin'], variable: '--font-chivo-mono', display: 'swap', preload: true })
+const bruno_ace_sc = Bruno_Ace_SC({ weight: "400", subsets: ['latin'], variable: '--font-bruno-ace-sc', display: 'swap', preload: true })
 
 export const metadata = {
   title: 'Tech Comp',
