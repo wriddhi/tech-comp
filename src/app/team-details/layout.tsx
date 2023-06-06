@@ -1,5 +1,3 @@
-"use client"
-
 export const metadata = {
   title: 'Team Details',
   description: 'Developed by Programado, the JISU coding club',

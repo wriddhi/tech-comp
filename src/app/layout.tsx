@@ -1,5 +1,3 @@
-"use client"
-
 import './globals.css'
 import { Inter, Jost, Chivo_Mono, Bruno_Ace_SC } from 'next/font/google'
 import Header from '@/components/Header'

@@ -1,5 +1,3 @@
-"use client"
-
 export const metadata = {
     title: 'Register',
     description: 'Register for Tech Comp, the 3-way hybid competition',
