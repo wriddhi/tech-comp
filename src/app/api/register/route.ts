@@ -75,11 +75,11 @@ export async function POST(req: NextRequest) {
     const { data, error } = await supabase
       .from("teams")
       .select("*")
-      .eq("name", body.team);
+      .eq("name", team);
 
     if (error) {
       return NextResponse.json({
-        message: "There was some problem creatinf the team",
+        message: "There was some problem creating the team",
       });
     }
 
