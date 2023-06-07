@@ -12,41 +12,53 @@ export async function POST(req: NextRequest) {
   delete body?.team;
   delete body?.category;
 
+  // Does user already exist?
   const { data: user, error } = await supabase
     .from("users")
     .select("*")
     .eq("id", body.id);
 
+  // Return error if user search is unsuccessful
   if (error) {
     return NextResponse.json({
       message: "There was some problem registering you",
     });
   }
 
+  // Return error if user already exists
   if (user?.length !== 0) {
     return NextResponse.json({ message: "User already exists" });
   }
 
+  // If user doesn't exist, we can proceed with registration
+
+  // User is joining a team
   if (action === "join") {
+
+    // Check if team exists
     const { data, error } = await supabase
       .from("teams")
       .select("*")
       .eq("name", team);
 
+      // Return error if team search is unsuccessful
     if (error) {
       return NextResponse.json({
         message: "There was some problem joining the team",
       });
     }
 
+    // Return error if team doesn't exist
     if (data?.length === 0) {
       return NextResponse.json({ message: "No team with that name exists" });
     }
 
+    // Return error if team is full
     if (data[0].members?.length == 5) {
       return NextResponse.json({ message: "Team is full" });
     }
 
+    // User does not exist yet, 
     const { data: user, error: userError } = await supabase
       .from("users")
       .insert(body);

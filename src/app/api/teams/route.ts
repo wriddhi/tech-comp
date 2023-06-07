@@ -1,8 +1,8 @@
 import { supabase } from "@/lib/supabase";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
-export async function GET() {
+export async function GET(request: NextRequest) {
     const {data: teams, error} = await supabase.from("teams").select("*");
 
     if (error) {
