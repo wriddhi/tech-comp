@@ -37,7 +37,7 @@ export default function Register() {
     {
       category: "Coding Competition",
       description: "Compete in a coding competition to test your skills",
-      href: "/register/coding",
+      href: "https://www.geeksforgeeks.org/",
     }
   ];
 

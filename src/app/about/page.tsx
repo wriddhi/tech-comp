@@ -82,7 +82,7 @@ export default function About() {
         offering students an unparalleled platform to learn, grow, and shine.
         Join us and be a part of this extraordinary opportunity!
       </p>
-      <h2 className="text-5xl mt-20">Schedule</h2>
+      {/* <h2 className="text-5xl mt-20">Schedule</h2>
       <table className="my-10 rounded-2xl overflow-hidden outline outline-1 w-5/6 x-auto">
         <thead>
           <tr>
@@ -162,7 +162,7 @@ export default function About() {
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </main>
   );
 }
