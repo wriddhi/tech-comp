@@ -15,7 +15,7 @@ const EventCard: React.FC<Event> = ({ category, description, href }) => {
         {category}
       </h3>
       <p className="text-lg">{description}</p>
-      <a className="bg-white text-black font-bold p-2 rounded-lg" href={href}>Register Now &gt;</a>
+      <a target={href[0] == "/" ? "_self" : "_blank" } className="bg-white text-black font-bold p-2 rounded-lg" href={href}>Register Now &gt;</a>
     </div>
   );
 }
@@ -24,11 +24,11 @@ const EventCard: React.FC<Event> = ({ category, description, href }) => {
 export default function Register() {
 
   const events: Event[] = [
-    {
-      category: "Poster Presentation",
-      description: "Present your research on a poster to a panel of judges",
-      href: "/register/poster",
-    },
+    // {
+    //   category: "Poster Presentation",
+    //   description: "Present your research on a poster to a panel of judges",
+    //   href: "/register/poster",
+    // },
     {
       category: "Model Display",
       description: "Display your model to a panel of judges",
@@ -44,7 +44,7 @@ export default function Register() {
   return (
     <main className="w-full flex flex-col justify-center items-center">
       <h1 className="text-8xl font-bruno capitalize">Register</h1>
-      <section className="grid grid-cols-3 gap-10 w-5/6 mx-auto my-20">
+      <section className="grid grid-cols-2 gap-10 w-5/6 mx-auto my-20">
         {events.map((event) => (
           <EventCard key={event.category} {...event} />
         ))}

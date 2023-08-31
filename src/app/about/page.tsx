@@ -8,8 +8,8 @@ export default function About() {
           abilities. It provides an excellent opportunity for students to
           showcase their technical expertise and demonstrate their programming
           prowess. The coding competition will be organised on{" "}
-          <a className="text-emerald-400" href="https://geeksforgeeks.org/">
-            GeeksForGeeks
+          <a target="_blank" className="text-emerald-400" href="https://hackerrank.com">
+            HackerRank
           </a>{" "}
           platform. So, to participate in the competition students must have a
           Geeksforgeeks account.
@@ -33,21 +33,21 @@ export default function About() {
         </>
       ),
     },
-    {
-      title: "Poster Presentation",
-      description: (
-        <>
-          In this segment, students present their ideas and projects through
-          visually appealing posters. This event not only fosters creativity but
-          also promotes effective communication skills and the ability to
-          present information in a concise and engaging manner. Students with
-          maximum 5 members team or minimum 2 members team can participate in
-          this event. They have to register themselves using the register tab.
-          They have to make a poster and show it on campus. The topic is:
-          <b className="text-cyan-400"> Sustainable technology</b>
-        </>
-      ),
-    },
+    // {
+    //   title: "Poster Presentation",
+    //   description: (
+    //     <>
+    //       In this segment, students present their ideas and projects through
+    //       visually appealing posters. This event not only fosters creativity but
+    //       also promotes effective communication skills and the ability to
+    //       present information in a concise and engaging manner. Students with
+    //       maximum 5 members team or minimum 2 members team can participate in
+    //       this event. They have to register themselves using the register tab.
+    //       They have to make a poster and show it on campus. The topic is:
+    //       <b className="text-cyan-400"> Sustainable technology</b>
+    //     </>
+    //   ),
+    // },
   ];
 
   return (

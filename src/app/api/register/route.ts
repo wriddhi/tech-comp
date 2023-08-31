@@ -34,14 +34,13 @@ export async function POST(req: NextRequest) {
 
   // User is joining a team
   if (action === "join") {
-
     // Check if team exists
     const { data, error } = await supabase
       .from("teams")
       .select("*")
       .eq("name", team);
 
-      // Return error if team search is unsuccessful
+    // Return error if team search is unsuccessful
     if (error) {
       return NextResponse.json({
         message: "There was some problem joining the team",
@@ -58,7 +57,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Team is full" });
     }
 
-    // User does not exist yet, 
+    if (data[0].members.includes(body.id)) {
+      return NextResponse.json({
+        message: "You are already a member of this team",
+      });
+    }
+
+    // User does not exist yet,
     const { data: user, error: userError } = await supabase
       .from("users")
       .insert(body);
