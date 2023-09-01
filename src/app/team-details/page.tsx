@@ -9,7 +9,6 @@ interface Team {
   category: string;
 }
 
-export const revalidate = 1; 
 
 export default function TeamDetails() {
   const [teams, setTeams] = useState<Team[]>([]);
