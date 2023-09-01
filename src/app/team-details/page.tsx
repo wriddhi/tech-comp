@@ -19,7 +19,7 @@ export default function TeamDetails() {
   ) : [];
 
   useEffect(() => {
-    fetch("/api/teams")
+    fetch("/api/teams", { cache: 'no-store', next: {revalidate: 0}})
       .then((res) => res.json())
       .then((data: Team[]) => setTeams(data));
   }, []);
