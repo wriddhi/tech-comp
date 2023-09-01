@@ -9,17 +9,20 @@ interface Team {
   category: string;
 }
 
+export const fetchCache = 'force-no-store'
 
 export default function TeamDetails() {
   const [teams, setTeams] = useState<Team[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  const filteredTeams = teams ? teams.filter((team) =>
-    team.name.toLowerCase().startsWith(search.toLowerCase())
-  ) : [];
+  const filteredTeams = teams
+    ? teams.filter((team) =>
+        team.name.toLowerCase().startsWith(search.toLowerCase())
+      )
+    : [];
 
   useEffect(() => {
-    fetch("/api/teams", { cache: 'no-store', next: {revalidate: 0}})
+    fetch("/api/teams", { cache: "no-store", next: { revalidate: 0 } })
       .then((res) => res.json())
       .then((data: Team[]) => setTeams(data));
   }, []);
@@ -75,9 +78,18 @@ export default function TeamDetails() {
               ))
             ) : (
               <tr className="border border-white border-solid text-center">
-                <td className="border border-white border-solid px-4 py-2"> - </td>
-                <td className="border border-white border-solid px-4 py-2"> - </td>
-                <td className="border border-white border-solid px-4 py-2"> - </td>
+                <td className="border border-white border-solid px-4 py-2">
+                  {" "}
+                  -{" "}
+                </td>
+                <td className="border border-white border-solid px-4 py-2">
+                  {" "}
+                  -{" "}
+                </td>
+                <td className="border border-white border-solid px-4 py-2">
+                  {" "}
+                  -{" "}
+                </td>
               </tr>
             )}
           </tbody>
