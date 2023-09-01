@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
+export const fetchCache = "force-no-store";
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
 

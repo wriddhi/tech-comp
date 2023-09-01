@@ -9,7 +9,6 @@ interface Team {
   category: string;
 }
 
-export const fetchCache = 'force-no-store'
 
 export default function TeamDetails() {
   const [teams, setTeams] = useState<Team[]>([]);
